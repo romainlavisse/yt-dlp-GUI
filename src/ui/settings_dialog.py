@@ -11,7 +11,7 @@ class SettingsDialog(ctk.CTkToplevel):
     def __init__(self, master, **kwargs):
         super().__init__(master, **kwargs)
         self.title("Settings")
-        self.geometry("550x550")
+        self.geometry("550x600")
         self.resizable(False, False)
         
         self.settings = SettingsManager()
@@ -125,6 +125,20 @@ class SettingsDialog(ctk.CTkToplevel):
                                        command=lambda: webbrowser.open("https://github.com/BtbN/FFmpeg-Builds/releases"))
         btn_dl_ffmpeg.pack(side="left", padx=2)
         row += 1
+
+        # Deno Installation Command
+        lbl_deno = ctk.CTkLabel(self, text="Deno (Install):")
+        lbl_deno.grid(row=row, column=0, padx=15, pady=5, sticky="e")
+
+        self.entry_deno_cmd = ctk.CTkEntry(self, width=240)
+        self.entry_deno_cmd.insert(0, "irm https://deno.land/install.ps1 | iex")
+        self.entry_deno_cmd.configure(state="readonly")
+        self.entry_deno_cmd.grid(row=row, column=1, padx=5, pady=5, sticky="ew")
+
+        btn_copy_deno = ctk.CTkButton(self, text="Copy", width=60,
+                                      command=self.copy_deno_command)
+        btn_copy_deno.grid(row=row, column=2, padx=(0, 15), pady=5)
+        row += 1
         
         # === ACTION BUTTONS ===
         btn_frame = ctk.CTkFrame(self, fg_color="transparent")
@@ -172,6 +186,12 @@ class SettingsDialog(ctk.CTkToplevel):
         if path:
             self.entry_ffmpeg_path.delete(0, "end")
             self.entry_ffmpeg_path.insert(0, path)
+
+    def copy_deno_command(self):
+        """Copy Deno install command to clipboard."""
+        self.clipboard_clear()
+        self.clipboard_append(self.entry_deno_cmd.get())
+        self.update()
 
     def save_settings(self):
         """Save settings to config file and close dialog."""

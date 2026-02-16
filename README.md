@@ -109,7 +109,7 @@ For full functionality, the following external tools are highly recommended:
 2.  **Deno**: Required by `yt-dlp` for some sites (like YouTube) to bypass diverse protections.
     -   Run this command in PowerShell (no Admin rights required): [Source](https://deno.com/)
         ```powershell
-        iwr https://deno.land/x/install/install.ps1 -useb | iex
+        irm https://deno.land/install.ps1 | iex
         ```
 
 ## License

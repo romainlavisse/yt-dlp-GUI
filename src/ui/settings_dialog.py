@@ -130,10 +130,13 @@ class SettingsDialog(ctk.CTkToplevel):
         lbl_deno = ctk.CTkLabel(self, text="Deno (Install):")
         lbl_deno.grid(row=row, column=0, padx=15, pady=5, sticky="e")
 
-        self.entry_deno_cmd = ctk.CTkEntry(self, width=240)
-        self.entry_deno_cmd.insert(0, "irm https://deno.land/install.ps1 | iex")
-        self.entry_deno_cmd.configure(state="readonly")
-        self.entry_deno_cmd.grid(row=row, column=1, padx=5, pady=5, sticky="ew")
+        # Command Container (Darker background for code look)
+        cmd_frame = ctk.CTkFrame(self, fg_color="gray10", corner_radius=6)
+        cmd_frame.grid(row=row, column=1, padx=5, pady=5, sticky="ew")
+
+        self.lbl_deno_cmd = ctk.CTkLabel(cmd_frame, text="irm https://deno.land/install.ps1 | iex",
+                                         font=("Consolas", 11), text_color="gray80", anchor="w")
+        self.lbl_deno_cmd.pack(side="left", padx=10, pady=5, fill="x", expand=True)
 
         btn_copy_deno = ctk.CTkButton(self, text="Copy", width=60,
                                       command=self.copy_deno_command)
@@ -190,7 +193,7 @@ class SettingsDialog(ctk.CTkToplevel):
     def copy_deno_command(self):
         """Copy Deno install command to clipboard."""
         self.clipboard_clear()
-        self.clipboard_append(self.entry_deno_cmd.get())
+        self.clipboard_append(self.lbl_deno_cmd.cget("text"))
         self.update()
 
     def save_settings(self):

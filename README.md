@@ -99,11 +99,16 @@ To install them:
 pip install -r requirements.txt
 ```
 
-### External Tools (FFmpeg)
-For full functionality (specifically merging high-quality video and audio streams), **FFmpeg** is highly recommended.
-1.  Download FFmpeg from [ffmpeg.org](https://ffmpeg.org/download.html).
-2.  Extract it.
-3.  Either add it to your system PATH or specify the path to `ffmpeg.exe` in the application Settings.
+### External Tools (FFmpeg & Deno)
+For full functionality, the following external tools are highly recommended:
+
+1.  **FFmpeg**: Required to merge high-quality video and audio streams (1080p+).
+    -   Download from [ffmpeg.org](https://ffmpeg.org/download.html).
+    -   Add to system PATH or specify in Settings.
+
+2.  **Deno**: Required by `yt-dlp` for some sites (like YouTube) to bypass diverse protections.
+    -   Download from [deno.com](https://deno.com/).
+    -   Install it (it will automatically add itself to PATH).
 
 ## License
 

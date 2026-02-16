@@ -99,11 +99,16 @@ Pour les installer :
 pip install -r requirements.txt
 ```
 
-### Outils Externes (FFmpeg)
-Pour une fonctionnalité complète (notamment la fusion vidéo/audio HD), **FFmpeg** est fortement recommandé.
-1.  Téléchargez FFmpeg depuis [ffmpeg.org](https://ffmpeg.org/download.html).
-2.  Extrayez l'archive.
-3.  Ajoutez-le au PATH système ou spécifiez le chemin vers `ffmpeg.exe` dans les Paramètres de l'application.
+### Outils Externes (FFmpeg & Deno)
+Pour une fonctionnalité complète, ces outils sont fortement recommandés :
+
+1.  **FFmpeg** : Requis pour fusionner vidéo et audio en haute qualité (1080p+).
+    -   Télécharger sur [ffmpeg.org](https://ffmpeg.org/download.html).
+    -   Ajouter au PATH ou spécifier dans les Paramètres.
+
+2.  **Deno** : Requis par `yt-dlp` pour certains sites (comme YouTube) afin de contourner des protections.
+    -   Télécharger sur [deno.com](https://deno.com/).
+    -   Installer (l'ajout au PATH est automatique).
 
 ## Licence
 

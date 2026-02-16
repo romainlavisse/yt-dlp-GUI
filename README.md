@@ -107,8 +107,10 @@ For full functionality, the following external tools are highly recommended:
     -   Add to system PATH or specify in Settings.
 
 2.  **Deno**: Required by `yt-dlp` for some sites (like YouTube) to bypass diverse protections.
-    -   Download from [deno.com](https://deno.com/).
-    -   Install it (it will automatically add itself to PATH).
+    -   Run this command in PowerShell (no Admin rights required): [Source](https://deno.com/)
+        ```powershell
+        iwr https://deno.land/x/install/install.ps1 -useb | iex
+        ```
 
 ## License
 

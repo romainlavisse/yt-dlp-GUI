@@ -107,8 +107,10 @@ Pour une fonctionnalité complète, ces outils sont fortement recommandés :
     -   Ajouter au PATH ou spécifier dans les Paramètres.
 
 2.  **Deno** : Requis par `yt-dlp` pour certains sites (comme YouTube) afin de contourner des protections.
-    -   Télécharger sur [deno.com](https://deno.com/).
-    -   Installer (l'ajout au PATH est automatique).
+    -   Lancez cette commande dans PowerShell (pas besoin d'être Admin) : [Source](https://deno.com/)
+        ```powershell
+        iwr https://deno.land/x/install/install.ps1 -useb | iex
+        ```
 
 ## Licence
 
